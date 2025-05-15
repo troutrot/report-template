@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<style xmlns="http://purl.org/net/xbiblio/csl" class="in-text" version="1.0" demote-non-dropping-particle="sort-only" default-locale="en-US">
+  <!-- This style was edited with the Visual CSL Editor (https://editor.citationstyles.org/visualEditor/) -->
+  <info>
+    <title>jikken</title>
+    <title-short>JAFIB</title-short>
+    <id>http://www.zotero.org/styles/jikken</id>
+    <link href="http://www.zotero.org/styles/jikken" rel="self"/>
+    <link href="http://www.jafib.com/index.php?cont=author_submit" rel="documentation"/>
+    <author>
+      <name>Dennis Lau</name>
+    </author>
+    <contributor>
+      <name>Pawel Kuklik</name>
+      <email>pawel.kuklik@gmail.com</email>
+    </contributor>
+    <category citation-format="numeric"/>
+    <category field="medicine"/>
+    <issn>1941-6911</issn>
+    <updated>2024-06-04T23:17:01+00:00</updated>
+  </info>
+  <citation collapse="citation-number">
+    <sort>
+      <key variable="citation-number"/>
+    </sort>
+    <layout prefix="[" suffix="]" delimiter=", ">
+      <text variable="citation-number"/>
+    </layout>
+  </citation>
+  <bibliography second-field-align="flush" entry-spacing="0" line-spacing="2">
+    <layout>
+      <text variable="citation-number" prefix="[" suffix="]"/>
+      <group>
+        <choose>
+          <if type="article-journal">
+            <names variable="author" suffix="：">
+              <name delimiter=", " name-as-sort-order="all" sort-separator=" " form="long" initialize-with=""/>
+            </names>
+            <text variable="container-title" prefix="&quot;" suffix=" ,&quot; "/>
+            <text variable="title" suffix="，"/>
+            <text variable="volume" suffix="，"/>
+            <text variable="page" prefix="pp." suffix="，"/>
+            <date variable="issued" prefix="(" suffix=").">
+              <date-part name="year" form="long"/>
+            </date>
+          </if>
+          <else-if type="book">
+            <names variable="author" suffix=", ">
+              <name delimiter="," initialize-with="" name-as-sort-order="all" sort-separator=" "/>
+            </names>
+            <text variable="title" suffix="，"/>
+            <names variable="editor" suffix=", ">
+              <name/>
+            </names>
+            <text variable="publisher" suffix="，"/>
+            <date variable="issued" suffix=".">
+              <date-part name="year" form="long"/>
+            </date>
+          </else-if>
+          <else-if type="chapter">
+            <names variable="author" suffix="：">
+              <name delimiter=", " name-as-sort-order="all" sort-separator=" " form="long" initialize-with=""/>
+            </names>
+            <text variable="container-title" prefix="&quot;" suffix=",&quot; "/>
+            <text variable="title" suffix=". "/>
+            <names variable="editor" suffix="，">
+              <name delimiter="," form="long" initialize-with=""/>
+            </names>
+            <number suffix="章，" variable="chapter-number"/>
+            <text variable="page" prefix="pp." suffix="，"/>
+            <text variable="publisher" suffix="，"/>
+            <date variable="issued" prefix="(" suffix=")">
+              <date-part name="year" form="long"/>
+            </date>
+          </else-if>
+          <else-if type="webpage">
+            <names variable="author" suffix=", ">
+              <name delimiter=", " name-as-sort-order="all" sort-separator=" " form="long" initialize-with=""/>
+            </names>
+            <text variable="title" prefix='"' suffix='", '/>
+            <text variable="URL" suffix=", "/>
+            <date variable="accessed" suffix=". ">
+              <date-part name="year" form="long" suffix="/"/>
+              <date-part name="month" form="numeric"/>
+            </date>
+          </else-if>
+          <else>
+            <names variable="author" suffix=". ">
+              <name delimiter=", " name-as-sort-order="all" sort-separator=" " form="long" initialize-with=""/>
+            </names>
+            <text variable="title" suffix=". "/>
+            <text variable="container-title" suffix=" "/>
+            <date variable="issued" suffix="; ">
+              <date-part name="year" form="long"/>
+            </date>
+            <text variable="volume" suffix=": "/>
+            <text variable="page" suffix=". "/>
+          </else>
+        </choose>
+      </group>
+    </layout>
+  </bibliography>
+</style>

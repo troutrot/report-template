@@ -1,0 +1,192 @@
+\documentclass[a4paper]{ltjsarticle}
+\usepackage[explicit]{titlesec}
+\usepackage[dotinlabels]{titletoc}
+\usepackage{graphicx}
+\usepackage{here}
+\usepackage{amsmath,amssymb}
+\usepackage{wrapfig}
+\usepackage{layout}
+\usepackage[top=20truemm,bottom=20truemm,left=23truemm,right=23truemm]{geometry}
+\usepackage{lmodern}
+\usepackage{enumerate}
+\usepackage{adjustbox}
+\usepackage[hiragino-pron]{luatexja-preset}
+% \usepackage[ms]{luatexja-preset}
+\usepackage{listings}
+\usepackage{color}
+\lstset{
+ 	language = Tex,
+ 	backgroundcolor={\color[gray]{.90}},
+ 	breaklines = true,
+ 	breakindent = 10pt,
+ 	basicstyle = \ttfamily\scriptsize,
+ 	commentstyle = {\itshape \color[cmyk]{1,0.4,1,0}},
+ 	classoffset = 0,
+ 	keywordstyle = {\bfseries \color[cmyk]{0,1,0,0}},
+ 	stringstyle = {\ttfamily \color[rgb]{0,0,1}},
+ 	frame = TBrl,
+ 	framesep = 5pt,
+ 	numbers = left,
+ 	stepnumber = 1,
+ 	numberstyle = \tiny,
+ 	tabsize = 4,
+ 	captionpos = t
+}
+
+\renewcommand{\lstlistingname}{ソースコード}
+\renewcommand{\refname}{\fontsize{10.5pt}{10.5pt}\selectfont{＜参考文献＞}}
+
+\titleformat{\section}
+  {\sffamily\fontsize{12pt}{12pt}\selectfont}{\MySecSquare\ \thesection{.}}{1em}{#1}
+\titleformat{name=\section,numberless}
+  {\sffamily\fontsize{12pt}{12pt}\selectfont}{\MySecSquare}{1em}{#1}
+
+\titlecontents{section}
+  [3.8em]{}
+  {\sffamily\contentslabel{2.3em}}
+  {\hspace*{-2.3em}}
+  {\titlerule*[1pc]{.}\sffamily\contentspage}
+
+\titleformat{\subsection}
+  {\sffamily\fontsize{10.5pt}{10.5pt}\selectfont}{\MySecSquare\ \thesubsection{.}}{1em}{#1}
+\titleformat{name=\subsection,numberless}
+  {\sffamily\fontsize{10.5pt}{10.5pt}\selectfont}{\MySecSquare}{1em}{#1}
+
+\titlecontents{subsection}
+  [3.8em]{}
+  {\sffamily\contentslabel{2.3em}}
+  {\hspace*{-2.3em}}
+  {\titlerule*[1pc]{.}\sffamily\contentspage}
+
+\titleformat{\subsubsection}
+  {\sffamily\fontsize{10.5pt}{10.5pt}\selectfont}{\thesubsubsection{.}}{1em}{#1}
+
+\titlecontents{subsubsection}
+  [3.8em]{}
+  {\sffamily\contentslabel{2.3em}}
+  {\hspace*{-2.3em}}
+  {\titlerule*[1pc]{.}\sffamily\contentspage}
+
+\newcommand\MySecSquare{
+  \leavevmode\hbox to 0.5ex{\hss\vrule height 1.0ex width 0.5ex depth -.5ex\hss}}
+
+\renewcommand{\baselinestretch}{1}\selectfont
+
+\newcommand{\zu}[1]{図\ref*{fig:#1}}
+
+\newcommand{\hyou}[1]{表\ref*{tb:#1}}
+
+\newcommand{\shiki}[1]{式(\ref*{eq:#1})}
+
+\newcommand{\done}{\rlap{$\square$}{\raisebox{0.2em}{\large\hspace{0.1em}\checkmark}}%
+\hspace{-0.25em}}
+
+\begin{document}
+
+\fontsize{20pt}{30pt}\selectfont
+\textgt{
+\vskip\baselineskip
+\centerline{電気・通信・電子・情報工学実験Ｘ報告書}
+\vskip\baselineskip
+\noindent 　　　題目　　　　　Ｘ-２ 使い方\\
+　　　実験日　　　　令和　Ｘ年　Ｘ月ＸＸ日\\
+　　　報告書提出日　令和　Ｘ年　Ｘ月ＸＸ日
+\vskip\baselineskip
+\noindent 　　　東北大学 工学部 電気情報物理工学科\\
+　　　ＸＸ工学コース　　　\textsf{Ｘ}班
+\vskip\baselineskip
+\noindent 報告者　　　ＸＸＸＸ (学籍番号\textsf{CXTB2000})
+\vskip\baselineskip
+\noindent 共同実験者　ＸＸＸＸ\\
+　　　　　　ＸＸＸＸ\\
+　　　　　　ＸＸＸＸ\\
+　　　　　　ＸＸＸＸ\\
+}
+\newpage
+\fontsize{10.5pt}{10.5pt}\selectfont
+\renewcommand{\baselinestretch}{1.65}\selectfont
+
+\centerline{\fontsize{18pt}{18pt}\selectfont{令和Ｘ年度　学生実験X　レポート}}
+\vskip3\baselineskip
+\hbox{\vbox to 2em{{\hbox to 45em{実験題目：\hfil 使い方\hfil}}\vskip.5mm \hrule height.1mm width45em}}
+\vskip2\baselineskip
+\hbox{{\vbox to 2em{{\hbox to 22em{学籍番号：\hfil CXTB2000\hfil}}\vskip.5mm \hrule height.1mm width22em}}　{\vbox to 2em{{\hbox to 22em{氏　名：\hfil ＸＸＸＸ\hfil}}\vskip.5mm{}\hrule height.1mm width22em}}}
+\vskip2\baselineskip
+\hbox{{\vbox to 2em{{\hbox to 10em{\hfil ＸＸ\hfil コース}}\vskip.5mm \hrule height.1mm width10em}}\hspace{1em}{\vbox to 2em{{\hbox to 4em{\hfil X\hfil 班}}\vskip.5mm\hrule height.1mm width4em}}\hspace{2em}{\vbox to 2em{{\hbox to 13em{実験日：\hfil2000/1/1\hfil}}\vskip0mm\hrule height.1mm width13em}}\hspace{2em}{\vbox to 2em{{\hbox to 13em{提出日：\hfil2000/1/1\hfil}}\vskip0mm\hrule height.1mm width13em}}}
+\vskip2\baselineskip
+\hbox{\vbox to 2em{{\hbox to 45em{共同実験者名：\hfil ＸＸＸＸ\hfil ＸＸＸＸ\hfil ＸＸＸＸ\hfil ＸＸＸＸ\hfil}}\vskip.5mm \hrule height.1mm width45em}}
+\vskip2\baselineskip
+\textgt{
+  \centering{チェックリスト（チェックした項目の$\square$を\done に変えながら，確認すること）}\\
+  書　式
+}\\
+\done　グラフ，プログラムリスト，表，写真以外の部分は丁寧に書かれているか．\\
+\done　実験計画書，目的，概要(原理・方法)，結果，考察，まとめ，参考文献の順にまとめているか．\\
+\done　実験指針を丸写しせず，自分の言葉も含めてまとめてあるか．\\
+\done　実験結果，および考察（検討）は過去形で記してあるか．また，普遍的な内容は現在形で記してあるか．\\
+\done　実験指針に記載されている考察の項目にすべて回答しているか．\\
+\done　引用箇所を明示し，参考文献リストと対応づけているか．\\
+\done　参考文献リストは，以下のフォーマットで記してあるか．\\
+\noindent　　{\fontsize{10pt}{10pt}\selectfont{$\bigcirc$　論文誌などを引用する場合：　}}\\
+　　　　{\fontsize{9pt}{9pt}\selectfont{[1] 著者名，"標題，"　雑誌名，巻，(号,) pp.を付けて始め－終りのページ，月年．}}\\
+　　{\fontsize{10pt}{10pt}\selectfont{$\bigcirc$　著書，編書を引用する場合：　}}\\
+　　　　{\fontsize{9pt}{9pt}\selectfont{[2] 著者名，書名，編者名，発行所，発行年．}}\\
+　　{\fontsize{10pt}{10pt}\selectfont{$\bigcirc$　著書の一部を引用する場合：　}}\\
+　　　　{\fontsize{9pt}{9pt}\selectfont{[3] 著者名，"標題，" 書名，編者名，章番号またはpp.を付けて始め－終りのページ，発行所，発行年．}}\\
+\textgt{図 ･ 表}\\
+\done　グラフには横軸、縦軸のラベル（変数名と単位）を記しているか．\\
+\done　グラフを90度回転させて掲載する場合，回転方向は反時計回りか．\\
+\done　図や表には，図１，表１のような番号づけをしているか．\\
+\done　「単位」が正しくSI単位系で記載されているか．\\
+\done　図の説明文は図の下側に，表の説明文は表の上側に記しているか．\\
+\done　グラフの表現方法は適切か（不適切な曲線補間をしていないか，グラフと記録条件の対応がわかるよう　　にし
+てあるか等）．\\
+\done　本文で図や表について説明をしているか．\\
+
+\newpage
+\fontsize{10.5pt}{10.5pt}\selectfont
+\renewcommand{\baselinestretch}{1.65}\selectfont
+
+\section{このテンプレートについて}
+\subsection{このテンプレートの使用対象}
+このテンプレートは，電気・通信・電子・情報工学実験A・B・Cの報告書及びレポートを作成するためのものです．
+
+\subsection{使用上の注意}
+\begin{enumerate}
+\item 授業内で配布されているテンプレートはword形式ですが，このテンプレートは配布されたword形式のファイルを\LaTeX で書き直したものです．
+
+\item このテンプレートで作成したレポートを提出した場合，指定の提出フーマットと異なる部分があるため，提出を受け付けられない場合があります．利用は自己責任で行ってください．
+
+\item 再配布につきましては，個別に確認してください．
+
+\item また，テンプレートが授業で配布されたものと異なる時等に有益な改変を行った場合には，このリポジトリにプルリクエストを行ってください．
+
+\item 以上の注意を守れる方のみ，このテンプレートを使用してください．
+\end{enumerate}
+
+\section{このテンプレートの使い方}
+\subsection{全般的な注意}
+このテンプレートはLuaLaTeXを使用して作成しています．他の\LaTeX のコンパイラでは，フォントやレイアウトが異なる場合があります．LuaLaTeXを使用してください．
+
+表紙の部分を表示するために多数のパッケージを使用しています．必要なパッケージをインストールしていない場合，エラーが出ることがあります．その場合は，TeX Liveなどを用いて必要なパッケージをインストールするか，OverleafやCloudLaTeXなどのオンラインエディタを使用してください．
+
+\subsection{利用環境別の注意}
+\subsubsection{Windows}
+\begin{enumerate}
+  \item 使用するフォントをMS系列にするためには，ソースコード\ref{program1} のように書き換えて使用してください．
+  \begin{lstlisting}[caption = 書き換え例 , label = program1]
+    % \usepackage[hiragino-pron]{luatexja-preset}
+    \usepackage[ms]{luatexja-preset}
+  \end{lstlisting}
+\end{enumerate}
+
+\subsubsection{Mac}
+\begin{enumerate}
+  \item 使用するフォントをヒラギノ系列にするためには，ソースコード\ref{program2} のように書き換えて使用してください．
+  \begin{lstlisting}[caption = 書き換え例 , label = program2]
+    \usepackage[hiragino-pron]{luatexja-preset}
+    % \usepackage[ms]{luatexja-preset}
+  \end{lstlisting}
+\end{enumerate}
+
+\end{document}
