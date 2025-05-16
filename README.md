@@ -1,4 +1,4 @@
-![GitHub Downloads (all assets, latest release)](https://img.shields.io/github/downloads/troutrot/report-template/latest/total)
+![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/troutrot/report-template/total)
 # このテンプレートについて
 ## このテンプレートの使用対象
 このテンプレートは，電気・通信・電子・情報工学実験A・B・Cの報告書及びレポートを作成するためのものです．
